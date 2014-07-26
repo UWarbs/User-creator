@@ -13,10 +13,8 @@ app.use(express.static(__dirname + '/dist'));
 app.set('port', process.env.PORT || 3000);
 
 //=====API Routes=====
-//app.post('/api/v1/add-user', file);
-//require('./api/routes/playerCreate')(app, passport, jwtauth.auth); //Player creater
-//require('./api/routes/standingsRoute')(app); //Shows standings
-//require('./api/routes/addLeague')(app, jwtauth.auth);//adds league to player account
+require('./api/routes/createUser')(app); //User creater
+require('./api/routes/allUsers')(app); //Shows all users
 
 var server = http.createServer(app);
 

@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');;
 
-var playerSchema = new mongoose.Schema({
-	name: String,
+var userSchema = new mongoose.Schema({
+	userName: String,
 	age: Number,
 
 	//True if subscribed
 	newsLetters: {
 		angular: Boolean,
 		node: Boolean,
-	}
+	},
 	
 	contact: {
 		email: String,

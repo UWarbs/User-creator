@@ -1,8 +1,5 @@
 var User = require('../models/user.js');
 
-
-// /api/standing-view/:league
-// GET request for the selected league
 module.exports = function(app) {
 	app.get('/api/all-users', function(req, res){
 		console.log(req);

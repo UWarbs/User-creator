@@ -1,6 +1,6 @@
 <div class="row">
 <div class="span12">
-	<form class="form-horizontal" action='' method="POST" novalidate>
+	<form class="form-horizontal" method="POST" novalidate>
 		<fieldset>
 			
 			<div id="legend">
@@ -11,7 +11,7 @@
 			    <!-- Name -->
 			    <label class="control-label">Name</label>
 			    <div class="controls">
-			      <input type="text" id="name" name="name" placeholder="Bill" class="input-xlarge" ng-model="user.name" required>
+			      <input type="text" id="userName" name="userName" placeholder="Bill" class="input-xlarge" ng-model="user.userName" required>
 			    </div>
 			  </div>
 			  
@@ -19,7 +19,7 @@
 			    <!-- Email -->
 			    <label class="control-label">Email</label>
 			    <div class="controls">
-			      <input type="email" id="email" name="email" placeholder="example@example.com" class="input-xlarge" ng-model="user.contact.email" required>
+			      <input type="email" id="email" name="email" placeholder="example@example.com" class="input-xlarge" ng-model="user.email" required>
 			    </div>
 			  </div>
 			  
@@ -35,7 +35,7 @@
 			      <!-- Phone -->
 			    <label class="control-label">Phone Number</label>  
 			    <div class="controls">
-			     	<input type="text" id="phone" name="phone" class="input-xlarge" ng-model="user.contact.phone" required> 
+			     	<input type="text" id="phone" name="phone" class="input-xlarge" ng-model="user.phone" required> 
 			    </div>
 			  </div>
 			  
@@ -43,21 +43,21 @@
 			      <!-- Address -->
 			    <label class="control-label">Address</label>  
 			    <div class="controls">
-			      <input type="text" id="address" name="address" class="input-xlarge" ng-model="user.contact.address" required>
+			      <input type="text" id="address" name="address" class="input-xlarge" ng-model="user.address" required>
 			    </div>
 			  </div>
 
 			  <div class="control-group">
 			  	<div class="checkbox">
       			<label class="control-label"></label>
-      			<input type="checkbox" ng-model="user.newsletters.angular"> Subscribe to Angular newsletter
+      			<input type="checkbox" ng-model="user.angular"> Subscribe to Angular newsletter
       		</div>
 			  </div> 
 
 			  <div class="control-group">
 			  	<div class="checkbox">
       			<label class="control-label"></label>
-      			<input type="checkbox" ng-model="user.newsletters.node"> Subscribe to Node newsletter
+      			<input type="checkbox" ng-model="user.node"> Subscribe to Node newsletter
       		</div>
 			  </div>
 
@@ -72,5 +72,4 @@
 	</form>
 </div>
 </div>
-<pre> {{$scope.user}} </pre>
 
