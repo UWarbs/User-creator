@@ -4,6 +4,7 @@ module.exports = function(mainApp){
   	$scope.user = {};
   	
   	$scope.save = function(){
+  		
       console.log($scope.user);
   	};
   }]);
