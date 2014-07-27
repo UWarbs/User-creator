@@ -1,0 +1,22 @@
+<table class="table table-bordered" style="margin-top: 90px;">
+	<thead>
+		<tr>
+			<th>Things</th>
+			<th>Edit</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in items">
+			<td>{{item.username}}</td>
+			<td>{{item.age}}</td>
+			<td>{{item.contact.email}}</td>
+			<td>{{item.contact.phone}}</td>
+			<td>{{item.contact.address}}</td>
+			<td ng-if="item.newsLetters.angular">Subscribed</td>
+			<td ng-if="!item.newsLetters.angular">Not Subscribed</td>
+			<td ng-if="item.newsLetters.node">Subscribed</td>
+			<td ng-if="!item.newsLetters.node">Not Subscribed</td>  
+		</tr>
+	</tbody>
+	
+</table>

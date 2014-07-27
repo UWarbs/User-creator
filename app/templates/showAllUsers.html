@@ -14,7 +14,7 @@
 		<tr ng-repeat="user in users">
 			<td>
 			{{user.username}} 
-			<a href="/#/edit/{{user.username}}">edit</a>
+			<a href="/#/all-users" ng-click="goToUser()">edit</a>
 			<a href="/#/all-users" ng-click="deleteUser()">delete</a>
 			</td>
 			<td>{{user.age}}</td>
