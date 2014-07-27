@@ -6,6 +6,7 @@ var mainApp = angular.module('mainApp', ['ngRoute']);
 //====CONTROLLERS=====
 require('./angModules/create/CreateCtrl')(mainApp);
 require('./angModules/allUsers/ShowUsersCtrl')(mainApp);
+require('./angModules/edit/editUserCtrl')(mainApp);
 
 //====ROUTES=====
 mainApp.config(['$routeProvider', 
@@ -21,6 +22,10 @@ mainApp.config(['$routeProvider',
 			.when('/all-users', {
 				templateUrl: 'templates/showAllUsers.html',
 				controller: 'ShowUsersCtrl'
+			})
+			.when('/edit/:username', {
+				templateUrl: 'templates/editUser.html',
+				controller: 'EditUserCtrl'
 			});
 	}
 ]);

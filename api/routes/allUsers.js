@@ -2,7 +2,6 @@ var User = require('../models/user.js');
 
 module.exports = function(app) {
 	app.get('/api/all-users', function(req, res){
-		console.log(req);
 
 		res.setHeader('Content-Type', 'application/json');
 	

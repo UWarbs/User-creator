@@ -15,6 +15,8 @@ app.set('port', process.env.PORT || 3000);
 //=====API Routes=====
 require('./api/routes/createUser')(app); //User creater
 require('./api/routes/allUsers')(app); //Shows all users
+require('./api/routes/deleteUser')(app); // delete user
+require('./api/routes/editUser')(app);
 
 var server = http.createServer(app);
 
