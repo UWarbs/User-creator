@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');;
 
 var userSchema = new mongoose.Schema({
-	userName: String,
+	username: String,
 	age: Number,
 
 	//True if subscribed

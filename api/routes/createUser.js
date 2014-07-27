@@ -19,10 +19,12 @@ module.exports = function(app){
 			newUser.newsLetters.angular = req.body.angular;
 			newUser.newsLetters.node = req.body.node;
 			newUser.age = req.body.age;
-			newUser.userName = req.body.userName;
+			newUser.username = req.body.username;
 	
 			newUser.save(function(err, resNewUser){
 				if(err){return res.send(500, 'Error adding User' + err);}
+				
+
 			});
 		});
 	});
