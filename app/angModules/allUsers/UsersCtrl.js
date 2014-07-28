@@ -32,7 +32,6 @@ module.exports = function(mainApp){
     } 
     
     $scope.edit = function(id) {
-      console.log(id);
       $scope.editmode = true;
       userService.getOne(id)
         .success(function(user){
@@ -47,10 +46,9 @@ module.exports = function(mainApp){
     }
     
     $scope.save = function(id) {
-      console.log('updated cyurruser: ');
-      console.log($scope.currUser);
       userService.edit(id, $scope.currUser)
         .success(function(){
+          console.log("success");
           $scope.editRow = {};
         })
         .error(function(error){
@@ -59,22 +57,5 @@ module.exports = function(mainApp){
       getAllUsers();
       $scope.editmode = false;
     }
-    
-
-
-
-    
-    /*function setUser(userDoc){
-      $scope.user= userDoc;
-    }
-    $scope.goToUser = function(id){
-      getUserData($http, id, function(userData) {
-
-        setUser(userData);
-        console.log($scope.user);
-        $location.path('/view/' + $scope.user.username);
-      });
-    }*/
-  
   }]);
 };

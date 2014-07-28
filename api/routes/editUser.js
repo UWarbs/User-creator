@@ -7,11 +7,11 @@ module.exports = function(app) {
 				res.send(err);
 			}
 
-			user.contact.email = req.body.email;
-			user.contact.phone = req.body.phone;
-			user.contact.address = req.body.address;
-			user.newsLetters.angular = req.body.angular;
-			user.newsLetters.node = req.body.node;
+			user.contact.email = req.body.contact.email;
+			user.contact.phone = req.body.contact.phone;
+			user.contact.address = req.body.contact.address;
+			user.newsLetters.angular = req.body.newsLetters.angular || false;
+			user.newsLetters.node = req.body.newsLetters.node || false;
 			user.age = req.body.age;
 			user.username = req.body.username;
 			user._id = req.body._id;

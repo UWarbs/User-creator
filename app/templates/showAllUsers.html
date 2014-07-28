@@ -2,32 +2,32 @@
 
 <form name="editform" class="form-horizontal" ng-show="editmode">
 	<h3>{{currUser.username}}</h3>
-	<!-- might have to use value={{stuff}} to save unchanged things-->
+	<h3 ng-repeat="item in user">{{item}}</h3>
   <div class="control-group">
     <label>Name</label>   
-    <input type="text" placeholder="{{currUser.username}}" value="{{currUser.username}}" ng-model="currUser.username"/>
+    <input type="text" ng-model="currUser.username"/>
   </div>
   <div class="control-group">
     <label>Age</label>   
-    <input type="text" placeholder="{{currUser.age}}" value="{{currUser.age}}" ng-model="currUser.age"/>
+    <input type="text" ng-model="currUser.age"/>
   </div>
   <div class="control-group">
     <label>Email</label>   
-    <input type="text" placeholder="{{currUser.contact.email}}" value="" ="{{currUser.contact.email}}" ng-model="currUser.email"/>
+    <input type="text" placeholder="{{currUser.contact.email}}" ng-model="currUser.contact.email"/>
   </div>
   <div class="control-group">
     <label>Phone</label>   
-    <input type="text" placeholder="{{currUser.contact.phone}}" ng-model="currUser.phone"/>
+    <input type="text" placeholder="{{currUser.contact.phone}}" ng-model="currUser.contact.phone"/>
   </div>
   <div class="control-group">
     <label>Address</label>   
-    <input type="text" placeholder="{{currUser.contact.address}}" ng-model="currUser.address"/>
+    <input type="text" placeholder="{{currUser.contact.address}}" ng-model="currUser.contact.address"/>
   </div>
   <div class="control-group"> 
-    <input type="checkbox" ng-model="currUser.angular"/> Angular Newsletter
+    <input type="checkbox" ng-model="currUser.newsLetters.angular"/> Angular Newsletter
   </div>
   <div class="control-group">  
-    <input type="checkbox" ng-model="currUser.node"/> Node Newsletter
+    <input type="checkbox" ng-model="currUser.newsLetters.node"/> Node Newsletter
   </div>
   <div class="control-group">
     <button type="button" ng-disabled="editform.$pristine" class="btn btn-success" ng-click="save(currUser._id)">Save</button>
