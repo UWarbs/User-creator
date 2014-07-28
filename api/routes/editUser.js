@@ -14,6 +14,7 @@ module.exports = function(app) {
 			user.newsLetters.node = req.body.node;
 			user.age = req.body.age;
 			user.username = req.body.username;
+			user._id = req.body._id;
 	
 			user.save(function(err, resUser){
 				if(err){return res.send(500, 'Error editing User' + err);}

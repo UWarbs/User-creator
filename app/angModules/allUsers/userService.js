@@ -17,8 +17,8 @@ module.exports = function(mainApp){
 				return $http.delete('/api/delete/' + id);
 			},
 			//Edits a user
-			edit: function(id){
-				return $http.put('/api/' + id);
+			edit: function(id, data){
+				return $http.put('/api/edit/' + id, data);
 			}
 		}
 	}]);

@@ -7,12 +7,13 @@ var mainApp = angular.module('mainApp', ['ngRoute']);
 require('./angModules/create/CreateCtrl')(mainApp);
 require('./angModules/allUsers/UsersCtrl')(mainApp);
 require('./angModules/edit/editUserCtrl')(mainApp);
+require('./angModules/allUsers/userCtrl')(mainApp);
 
 //=====SERVICES=====
 require('./angModules/allUsers/userService')(mainApp);
 
 //=====ROUTES=====
-mainApp.config(['$routeProvider', 
+mainApp.config(['$routeProvider',
 	function($routeProvider){
 		$routeProvider
 			.when('/',{

@@ -1,6 +1,44 @@
-<table class="table table-bordered" style="margin-top: 90px;">
+<div style="margin-top: 90px;">
+
+<form name="editform" class="form-horizontal" ng-show="editmode">
+	<h3>{{currUser.username}}</h3>
+	<!-- might have to use value={{stuff}} to save unchanged things-->
+  <div class="control-group">
+    <label>Name</label>   
+    <input type="text" placeholder="{{currUser.username}}" value="{{currUser.username}}" ng-model="currUser.username"/>
+  </div>
+  <div class="control-group">
+    <label>Age</label>   
+    <input type="text" placeholder="{{currUser.age}}" value="{{currUser.age}}" ng-model="currUser.age"/>
+  </div>
+  <div class="control-group">
+    <label>Email</label>   
+    <input type="text" placeholder="{{currUser.contact.email}}" value="" ="{{currUser.contact.email}}" ng-model="currUser.email"/>
+  </div>
+  <div class="control-group">
+    <label>Phone</label>   
+    <input type="text" placeholder="{{currUser.contact.phone}}" ng-model="currUser.phone"/>
+  </div>
+  <div class="control-group">
+    <label>Address</label>   
+    <input type="text" placeholder="{{currUser.contact.address}}" ng-model="currUser.address"/>
+  </div>
+  <div class="control-group"> 
+    <input type="checkbox" ng-model="currUser.angular"/> Angular Newsletter
+  </div>
+  <div class="control-group">  
+    <input type="checkbox" ng-model="currUser.node"/> Node Newsletter
+  </div>
+  <div class="control-group">
+    <button type="button" ng-disabled="editform.$pristine" class="btn btn-success" ng-click="save(currUser._id)">Save</button>
+     <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  </div>
+</form>
+
+<table class="table table-bordered">
 	<thead>
 		<tr>
+			<th>Edit</th>
 			<th>Username</th>
 			<th>Age</th>
 			<th>Email</th>
@@ -11,11 +49,15 @@
 		</tr>
 	</thead>
 	<tbody>
+	
 		<tr ng-repeat="user in users">
 			<td>
+			<button class="btn btn-primary" ng-hide="editmode" ng-click="edit(user._id)">
+			Edit
+			</button>
+			<td>
 			{{user.username}} 
-			<a href="/#/all-users" ng-click="goToUser()">edit</a>
-			<a href="/#/all-users" ng-click="deleteUser()">delete</a>
+			<a href="/#/all-users" ng-click="deleteUser(user._id)">delete</a>
 			</td>
 			<td>{{user.age}}</td>
 			<td>{{user.contact.email}}</td>
@@ -29,3 +71,4 @@
 	</tbody>
 	
 </table>
+</div>

@@ -8,7 +8,6 @@ module.exports = function(mainApp){
   		$http.post('/api/add-user', $scope.user)
   			.success(function(data){
   				//clear form
-  				//add false to non-subscribed newsletter
   			}).error(function(data){
   				console.log("error in POST request");
   			});

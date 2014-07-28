@@ -108,10 +108,19 @@ module.exports = function (grunt) {
                     script: 'server.js'
                 }
             }
-        }
+        },
+        mochaTest:{
+            all:{
+                options:{
+                    reporter: 'spec'
+                },
+                src: ['test/apiTest.js']   
+            }
+    },
     });
 
     grunt.registerTask('build', ['clean', 'copy', 'browserify:standalone']);
     grunt.registerTask('server', ['jshint', 'express:dev', 'build', 'watch']);
     grunt.registerTask('serve', ['server']);
+    grunt.registerTask('test', ['jshint', 'mochaTest']);
 };

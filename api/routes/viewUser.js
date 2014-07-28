@@ -9,7 +9,7 @@ module.exports = function(app) {
 			if(err){
 				res.send(err);
 			}
-			res.send(user);
+			res.json(user);
 		});
 	})
 }
