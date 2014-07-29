@@ -10,7 +10,7 @@ module.exports = function(mainApp){
 			},
 			//Creates a user
 			create: function(data){
-				return $http.post('/api', data);
+				return $http.post('/api/add-user', data);
 			},
 			//Deletes a user
 			deleteOne: function(id){

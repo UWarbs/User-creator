@@ -75,13 +75,7 @@ module.exports = function (grunt) {
 
             js: {
                 files: '<%= browserify.standalone.src %>',
-                tasks: ['jshint', 'browserify:standalone',
-                'browserify:test']
-            },
-
-            testjs: {
-                files: '<%= browserify.test.src %>',
-                tasks: ['browserify:test']
+                tasks: ['jshint', 'browserify:standalone']
             },
             express: {
                 files: ['server.js', 'api/*.js'],

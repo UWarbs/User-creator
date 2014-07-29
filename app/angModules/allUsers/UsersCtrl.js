@@ -1,15 +1,11 @@
-var getUserData = require('../../getUserData');
 module.exports = function(mainApp){
-  mainApp.controller('UsersCtrl', [ '$scope', '$http', '$location', 'userService',
-    function ($scope, $http, $location, userService) {
-    
-    $scope.check = "";
-    $scope.editmn = true;
-    $scope.showfrm = false;
-    
+  mainApp.controller('UsersCtrl', [ '$scope', '$http', 'userService',
+    function ($scope, $http, userService) {
+   
     $scope.currUser = {};
     $scope.users;
     
+    //call function on page load to populate table
     getAllUsers();
     
     function getAllUsers() {
@@ -18,10 +14,11 @@ module.exports = function(mainApp){
           $scope.users = users;
         })
         .error(function (error) {
-          $scope.status = 'Unable to load user data: ' + error.message;
+          console.log('Unable to load user data: ' + error.message);
         });
     }
 
+    //deletes selected user
     $scope.deleteUser = function(id){
       userService.deleteOne(id)
         .success(function(){
@@ -31,30 +28,24 @@ module.exports = function(mainApp){
         });
     } 
     
+    //GETs selected users info, opens edit form, and populates it w/user info
     $scope.edit = function(id) {
       $scope.editmode = true;
       userService.getOne(id)
         .success(function(user){
           $scope.currUser = user;
-          console.log($scope.currUser);
         })
     }
     
-    $scope.cancel = function() {
-      $scope.editmode = false;
-      $scope.editRow = {};
-    }
-    
+    //PUT request for selected user, updates info in db and browser
     $scope.save = function(id) {
-      userService.edit(id, $scope.currUser)
-        .success(function(){
-          console.log("success");
-          $scope.editRow = {};
-        })
-        .error(function(error){
-          $scope.status = 'unable to edit user: ' + error.message;
-        });
+      userService.edit(id, $scope.currUser);
       getAllUsers();
+      $scope.editmode = false;
+    }
+    
+    //cancels edit form
+    $scope.cancel = function() {
       $scope.editmode = false;
     }
   }]);

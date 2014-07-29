@@ -7,6 +7,21 @@
  *
  * Designed and built with all the love in the world by @mdo and @fat.
  */
+.subbed{
+  color: #005f02;
+}
+.noSub{
+  color:#901102;
+}
+
+.delete{
+  color: #c00; 
+}
+
+.delete:hover{
+  text-decoration: none;
+  color: #00c;
+}
 
 .clearfix {
   *zoom: 1;

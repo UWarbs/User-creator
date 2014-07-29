@@ -1,17 +1,17 @@
 <div class="row">
 <div class="span12">
-	<form class="form-horizontal" method="POST" novalidate>
+	<form class="form-horizontal" method="POST" name="createForm" novalidate>
 		<fieldset>
 			
 			<div id="legend">
 			  <legend class="">Create</legend>
 			</div>
-			 
+			 <pre>{{user}}</pre>
 			 <div class="control-group">
 			    <!-- Name -->
 			    <label class="control-label">Name</label>
 			    <div class="controls">
-			      <input type="text" id="username" name="username" placeholder="Bill" class="input-xlarge" ng-model="user.username" required>
+			      <input type="text" id="username" name="username" placeholder="Bill" class="input-xlarge" ng-model="user.username" required />
 			    </div>
 			  </div>
 			  
@@ -19,15 +19,15 @@
 			    <!-- Email -->
 			    <label class="control-label">Email</label>
 			    <div class="controls">
-			      <input type="email" id="email" name="email" placeholder="example@example.com" class="input-xlarge" ng-model="user.email" required>
+			      <input type="email" id="email" name="email" placeholder="example@example.com" class="input-xlarge" ng-model="user.email" required />
 			    </div>
 			  </div>
 			  
 			  <div class="control-group">
-			    <!-- age -->
+			    <!-- Age -->
 			    <label class="control-label">Age</label>
 			    <div class="controls">
-			      <input type="text" id="age" name="age" class="input-xlarge" ng-model="user.age" required>
+			      <input type="text" id="age" name="age" class="input-xlarge" ng-model="user.age" />
 			    </div>
 			  </div>
 			  
@@ -35,7 +35,7 @@
 			      <!-- Phone -->
 			    <label class="control-label">Phone Number</label>  
 			    <div class="controls">
-			     	<input type="text" id="phone" name="phone" class="input-xlarge" ng-model="user.phone" required> 
+			     	<input type="text" id="phone" name="phone" class="input-xlarge" ng-model="user.phone" /> 
 			    </div>
 			  </div>
 			  
@@ -43,10 +43,10 @@
 			      <!-- Address -->
 			    <label class="control-label">Address</label>  
 			    <div class="controls">
-			      <input type="text" id="address" name="address" class="input-xlarge" ng-model="user.address" required>
+			      <input type="text" id="address" name="address" class="input-xlarge" ng-model="user.address" />
 			    </div>
 			  </div>
-
+			  	<!-- Newsletters-->
 			  <div class="control-group">
 			  	<div class="checkbox">
       			<label class="control-label"></label>
@@ -64,7 +64,7 @@
 			  <div class="control-group">
 			      <!-- Button -->
 			    <div class="controls">
-			      <button class="btn btn-success" ng-click="save()" ng-disabled="form.$invalid">Create</button>
+			      <button class="btn btn-success" type="submit" ng-click="save()" ng-disabled="createForm.$invalid">Create</button>
 			    </div>
 			  </div>
 		

@@ -6,8 +6,6 @@ var mainApp = angular.module('mainApp', ['ngRoute']);
 //=====CONTROLLERS=====
 require('./angModules/create/CreateCtrl')(mainApp);
 require('./angModules/allUsers/UsersCtrl')(mainApp);
-require('./angModules/edit/editUserCtrl')(mainApp);
-require('./angModules/allUsers/userCtrl')(mainApp);
 
 //=====SERVICES=====
 require('./angModules/allUsers/userService')(mainApp);
@@ -26,10 +24,6 @@ mainApp.config(['$routeProvider',
 			.when('/all-users', {
 				templateUrl: 'templates/showAllUsers.html',
 				controller: 'UsersCtrl'
-			})
-			.when('/edit/:username', {
-				templateUrl: 'templates/editUser.html',
-				controller: 'EditUserCtrl'
 			})
 			.when('/view/:username', {
 				templateUrl: 'templates/viewUser.html',

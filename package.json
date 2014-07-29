@@ -1,6 +1,6 @@
 {
-  "name": "Angular-CRUD",
-  "description": "Angular CRUD app",
+  "name": "Angular-REST",
+  "description": "Angular REST app",
   "version": "0.0.1",
   "dependencies": {
     "body-parser": "^1.2.0",

@@ -1,8 +1,8 @@
 <div style="margin-top: 90px;">
 
+<!-- Form for editing a selected user. Only visible on 'edit' click-->
 <form name="editform" class="form-horizontal" ng-show="editmode">
 	<h3>{{currUser.username}}</h3>
-	<h3 ng-repeat="item in user">{{item}}</h3>
   <div class="control-group">
     <label>Name</label>   
     <input type="text" ng-model="currUser.username"/>
@@ -35,6 +35,7 @@
   </div>
 </form>
 
+<!-- Table with all users and user info -->
 <table class="table table-bordered">
 	<thead>
 		<tr>
@@ -49,24 +50,24 @@
 		</tr>
 	</thead>
 	<tbody>
-	
+		<!-- Repeats a row with all of a user's data -->
 		<tr ng-repeat="user in users">
 			<td>
-			<button class="btn btn-primary" ng-hide="editmode" ng-click="edit(user._id)">
+			<button class="btn btn-mini" ng-hide="editmode" ng-click="edit(user._id)">
 			Edit
 			</button>
 			<td>
 			{{user.username}} 
-			<a href="/#/all-users" ng-click="deleteUser(user._id)">delete</a>
+			<a href="/#/all-users" ng-click="deleteUser(user._id)" class="delete">delete</a>
 			</td>
 			<td>{{user.age}}</td>
 			<td>{{user.contact.email}}</td>
 			<td>{{user.contact.phone}}</td>
 			<td>{{user.contact.address}}</td>
-			<td ng-if="user.newsLetters.angular">Subscribed</td>
-			<td ng-if="!user.newsLetters.angular">Not Subscribed</td>
-			<td ng-if="user.newsLetters.node">Subscribed</td>
-			<td ng-if="!user.newsLetters.node">Not Subscribed</td>  
+			<td ng-if="user.newsLetters.angular" class="subbed">Subscribed</td>
+			<td ng-if="!user.newsLetters.angular" class="noSub">Not Subscribed</td>
+			<td ng-if="user.newsLetters.node" class="subbed">Subscribed</td>
+			<td ng-if="!user.newsLetters.node" class="noSub">Not Subscribed</td>  
 		</tr>
 	</tbody>
 	
