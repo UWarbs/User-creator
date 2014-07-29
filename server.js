@@ -3,8 +3,8 @@ var http = require('http');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-var configDB = require('./config/database.js');
-mongoose.connect(configDB.url);
+
+mongoose.connect('mongodb://localhost/users');
 
 var app = express();
 
