@@ -3,12 +3,8 @@ var mongoose = require('mongoose');
 var userSchema = new mongoose.Schema({
 	username: String,
 	age: Number,
-
-	//True if subscribed
-	newsLetters: {
-		angular: Boolean,
-		node: Boolean,
-	},
+	hunter: Boolean,
+	landowner: Boolean,
 	
 	contact: {
 		email: String,
