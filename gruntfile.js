@@ -23,21 +23,21 @@ module.exports = function (grunt) {
                     {
                     expand:true,
                     flatten: true,
-                    cwd:'app/',
+                    cwd:'app/assets',
                     src:['bootstrap/css/*'],
                     dest:'dist/styles'
                     },
                     {
                     expand:true,
                     flatten: true,
-                    cwd:'app/',
+                    cwd:'app/assets',
                     src:['bootstrap/js/*'],
                     dest:'dist/js'
                     },
                     {
                     expand:true,
                     flatten: true,
-                    cwd:'app/',
+                    cwd:'app/assets',
                     src:['bootstrap/img/*'],
                     dest:'dist/img'
                     },
@@ -47,6 +47,20 @@ module.exports = function (grunt) {
                     cwd:'app/',
                     src:['templates/*'],
                     dest:'dist/templates'
+                    },
+                    {
+                    expand: true,
+                    flatten: true,
+                    cwd:'app/assets',
+                    src:['styles/*.css'],
+                    dest:'dist/styles'
+                    },
+                    {
+                    expand: true,
+                    flatten: true,
+                    cwd:'app/assets',
+                    src:['images/*'],
+                    dest:'dist/img'
                     }
                 ]
             }
