@@ -113,8 +113,8 @@ mainApp.config(['$routeProvider',
 			.when('/',{
 				templateUrl: 'templates/landing.html'
 			})
-			.when('/signup-hunter', {
-				templateUrl: 'templates/addUser.html',
+			.when('/signup', {
+				templateUrl: 'templates/signup.html',
 				controller: 'CreateCtrl'
 			})
 			.when('/all-users', {
@@ -127,12 +127,6 @@ mainApp.config(['$routeProvider',
 			});
 	}
 ]);
-	
-
-
-
-
-
 },{"./../bower_components/angular-route/angular-route.js":8,"./../bower_components/angular/angular.js":9,"./angModules/allUsers/UsersCtrl":1,"./angModules/allUsers/userService":2,"./angModules/create/CreateCtrl":3}],6:[function(require,module,exports){
 /*!
  * Bootstrap v3.2.0 (http://getbootstrap.com)

@@ -17,8 +17,8 @@ mainApp.config(['$routeProvider',
 			.when('/',{
 				templateUrl: 'templates/landing.html'
 			})
-			.when('/signup-hunter', {
-				templateUrl: 'templates/addUser.html',
+			.when('/signup', {
+				templateUrl: 'templates/signup.html',
 				controller: 'CreateCtrl'
 			})
 			.when('/all-users', {
@@ -31,8 +31,3 @@ mainApp.config(['$routeProvider',
 			});
 	}
 ]);
-	
-
-
-
-

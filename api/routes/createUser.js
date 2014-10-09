@@ -16,10 +16,10 @@ module.exports = function(app){
 			newUser.contact.email = req.body.email;
 			newUser.contact.phone = req.body.phone;
 			newUser.contact.address = req.body.address;
-			newUser.newsLetters.angular = req.body.angular;
-			newUser.newsLetters.node = req.body.node;
-			newUser.age = req.body.age;
-			newUser.username = req.body.username;
+			newUser.hunter = req.body.hunter;
+			newUser.landowner = req.body.landowner;
+			newUser.firstName = req.body.firstName;
+			newUser.lastName = req.body.lastName;
 	
 			newUser.save(function(err, resNewUser){
 				if(err){return res.send(500, 'Error adding User' + err);}

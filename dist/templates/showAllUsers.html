@@ -4,12 +4,12 @@
 <form name="editform" class="form-horizontal" ng-show="editmode">
 	<h3>{{currUser.username}}</h3>
   <div class="control-group">
-    <label>Name</label>   
-    <input type="text" ng-model="currUser.username"/>
+    <label>First Name</label>   
+    <input type="text" ng-model="currUser.firstName"/>
   </div>
   <div class="control-group">
-    <label>Age</label>   
-    <input type="text" ng-model="currUser.age"/>
+    <label>Last Name</label>   
+    <input type="text" ng-model="currUser.lastName"/>
   </div>
   <div class="control-group">
     <label>Email</label>   
@@ -24,10 +24,10 @@
     <input type="text" placeholder="{{currUser.contact.address}}" ng-model="currUser.contact.address"/>
   </div>
   <div class="control-group"> 
-    <input type="checkbox" ng-model="currUser.hunter"/> Hunter
+    <input type="radio" ng-model="currUser.hunter"/> Hunter
   </div>
   <div class="control-group">  
-    <input type="checkbox" ng-model="currUser.landowner"/> Landowner
+    <input type="radio" ng-model="currUser.landowner"/> Landowner
   </div>
   <div class="control-group">
     <button type="button" ng-disabled="editform.$pristine" class="btn btn-success" ng-click="save(currUser._id)">Save</button>
@@ -40,13 +40,9 @@
 	<thead>
 		<tr>
 			<th>Edit</th>
-			<th>Username</th>
-			<th>Age</th>
+			<th>Name</th>
 			<th>Email</th>
-			<th>Phone</th>
-			<th>Address</th>
-			<th>Angular Newsletter</th>
-			<th>Node Newsletter</th>
+			<th>Hunter or Landowner</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -57,17 +53,12 @@
 			Edit
 			</button>
 			<td>
-			{{user.username}} 
+			{{user.firstName}} {{user.lastName}} 
 			<a href="/#/all-users" ng-click="deleteUser(user._id)" class="delete">delete</a>
 			</td>
-			<td>{{user.age}}</td>
 			<td>{{user.contact.email}}</td>
-			<td>{{user.contact.phone}}</td>
-			<td>{{user.contact.address}}</td>
-			<td ng-if="user.newsLetters.angular" class="subbed">Subscribed</td>
-			<td ng-if="!user.newsLetters.angular" class="noSub">Not Subscribed</td>
-			<td ng-if="user.newsLetters.node" class="subbed">Subscribed</td>
-			<td ng-if="!user.newsLetters.node" class="noSub">Not Subscribed</td>  
+			<td ng-if="user.hunter" class="subbed">Hunter</td>
+			<td ng-if="!user.hunter" class="noSub">Landowner</td> 
 		</tr>
 	</tbody>
 	
