@@ -1,6 +1,7 @@
-var User = require('../models/user.js');
+var User     = require('../models/user.js');
+var passport = require('passport');
 
-module.exports = function(app){
+module.exports = function(app, passport, jwtauth){
 	app.post('/api/add-user', function(req, res){
 		User.findOne({'contact.email': req.body.email}, function(err, user){
 			if(err){
@@ -13,7 +14,8 @@ module.exports = function(app){
 			}
 		
 			var newUser = new User({});
-			newUser.contact.email = req.body.email;
+			newUser.basic.email = req.body.email;
+			newUser.basic.password = newUser.generateHash(req.body.password);
 			newUser.contact.phone = req.body.phone;
 			newUser.contact.address = req.body.address;
 			newUser.hunter = req.body.hunter;
@@ -23,8 +25,7 @@ module.exports = function(app){
 	
 			newUser.save(function(err, resNewUser){
 				if(err){return res.send(500, 'Error adding User' + err);}
-				
-
+				res.json({'jwt_token': resNewUser.createToken(app)});
 			});
 		});
 	});
