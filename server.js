@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/dist'));
 
 //PASSPORT
 app.use(passport.initialize());
-require('./api/lib/passport')
+require('./api/lib/passport');
 
 
 //=====API Routes=====

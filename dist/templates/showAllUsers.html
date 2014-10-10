@@ -56,7 +56,7 @@
 			{{user.firstName}} {{user.lastName}} 
 			<a href="/#/all-users" ng-click="deleteUser(user._id)" class="delete">delete</a>
 			</td>
-			<td>{{user.contact.email}}</td>
+			<td>{{user.basic.email}}</td>
 			<td ng-if="user.hunter" class="subbed">Hunter</td>
 			<td ng-if="!user.hunter" class="noSub">Landowner</td> 
 		</tr>

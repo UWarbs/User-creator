@@ -13,7 +13,7 @@ module.exports = function(app){
 			try{
 				var decoded = jwt.decode(token, app.get('jwtTokenSecret'));
 
-				User.findOne({'_id': decoded.iss}. function(err, user){
+				User.findOne({'_id': decoded.iss}, function(err, user){
 					if(err){return res.send(500, err);}
 
 					if(new Date(decoded.expires).getTime() < new Date().getTime()){
@@ -28,10 +28,11 @@ module.exports = function(app){
 				});
 			}catch(err){
 				return res.send(500);
-			}else {
-				return res.send(401, {'msg': 'no token found'});
 			}
+		}else{
+			return res.send(401, {'msg': 'no token found'});
 		}
+		
 		
 	};
 	return jwtauth;

@@ -1,11 +1,15 @@
 require('angular');
 require('angular-route');
+require('angular-cookies');
+require('angular-base64');
 
-var mainApp = angular.module('mainApp', ['ngRoute']); 
+var mainApp = angular.module('mainApp', ['ngRoute', 'base64', 'ngCookies']); 
 
 //=====CONTROLLERS=====
 require('./angModules/create/CreateCtrl')(mainApp);
 require('./angModules/allUsers/UsersCtrl')(mainApp);
+require('./angModules/dashboard/DashboardCtrl')(mainApp);
+require('./angModules/login/LoginCtrl')(mainApp);
 
 //=====SERVICES=====
 require('./angModules/allUsers/userService')(mainApp);
@@ -28,6 +32,14 @@ mainApp.config(['$routeProvider',
 			.when('/view/:username', {
 				templateUrl: 'templates/viewUser.html',
 				controller: 'UsersCtrl'
+			})
+			.when('/dashboard/:firstName', {
+				templateUrl: 'templates/dashboard.hmtl',
+				controller: 'DashboardCtrl'
+			})
+			.when('/login', {
+				templateUrl: 'templates/login.html',
+				controller: 'LoginCtrl'
 			});
 	}
 ]);
