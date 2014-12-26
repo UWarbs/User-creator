@@ -7,9 +7,9 @@ var mainApp = angular.module('mainApp', ['ngRoute', 'base64', 'ngCookies']);
 
 //=====CONTROLLERS=====
 require('./angModules/create/CreateCtrl')(mainApp);
+require('./angModules/create/LoginCtrl')(mainApp);
 require('./angModules/allUsers/UsersCtrl')(mainApp);
 require('./angModules/dashboard/DashboardCtrl')(mainApp);
-require('./angModules/login/LoginCtrl')(mainApp);
 
 //=====SERVICES=====
 require('./angModules/allUsers/userService')(mainApp);
@@ -33,8 +33,8 @@ mainApp.config(['$routeProvider',
 				templateUrl: 'templates/viewUser.html',
 				controller: 'UsersCtrl'
 			})
-			.when('/dashboard/:firstName', {
-				templateUrl: 'templates/dashboard.hmtl',
+			.when('/dashboard', {
+				templateUrl: 'templates/dashboard.html',
 				controller: 'DashboardCtrl'
 			})
 			.when('/login', {

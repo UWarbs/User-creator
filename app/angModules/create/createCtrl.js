@@ -9,7 +9,7 @@ module.exports = function(mainApp){
           console.log('success');
           if(data.jwt_token){
             $cookies.jwt_token = data.jwt_token;
-            $location.path('/');
+            $location.path('/dashboard');
           }else{
             console.log('success but no token');
           }

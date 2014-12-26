@@ -1,3 +1,5 @@
+var getUserData = require('../../assets/helperjs/getUserData');
+
 module.exports = function(mainApp){
   mainApp.controller('DashboardCtrl', [ '$scope', '$cookies', '$location', '$http', 'userService',
                       function ($scope, $cookies, $location, $http, userService) {

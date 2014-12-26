@@ -1,6 +1,6 @@
 var User = require('../models/user.js');
 
-module.exports = function(app) {
+module.exports = function(app, passport, jwtauth) {
 	app.get('/api/view/:_id', function(req, res){
 		
 		res.setHeader('Content-Type', 'application/json');
@@ -11,5 +11,9 @@ module.exports = function(app) {
 			}
 			res.send(user);
 		});
-	})
+	});
+	app.get('api/user-data', jwtauth, function(req, res){
+		res.setHeader('Content-Type', 'application/json');
+		res.send(req.user);
+	});
 }

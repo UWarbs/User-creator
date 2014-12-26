@@ -8,10 +8,11 @@ var cookieParser = require('cookie-parser');
 var app = express();
 mongoose.connect('mongodb://localhost/users');
 
+//JWT AUTH
 var jwtauth = require('./api/lib/jwtAuth')(app);
 app.set('jwtTokenSecret', process.env.JWT_SECRET || 'Changeme');
 
-//JWT AUTH
+
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
 
@@ -25,7 +26,7 @@ require('./api/routes/createUser')(app, passport, jwtauth.auth); //User creater
 require('./api/routes/allUsers')(app); //Shows all users
 require('./api/routes/deleteUser')(app); // delete user
 require('./api/routes/editUser')(app, jwtauth.auth);  //edit user
-require('./api/routes/viewUser')(app); //show single user
+require('./api/routes/viewUser')(app, passport, jwtauth.auth); //show single user
 
 var server = http.createServer(app);
 
